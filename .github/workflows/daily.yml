@@ -63,6 +63,7 @@ jobs:
       #          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
       #          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn -v
+      - run: yarn
       #      - run: yarn install
 
       #      - name: Cache pnpm modules
@@ -114,8 +115,8 @@ jobs:
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
-      #      - run: yarn -v
-      #      - run: yarn install
+      - run: yarn -v
+      - run: yarn install
       #      - run: npm i -g dotenv
       #       yarn cache
       #      - name: Use Yarn cache
