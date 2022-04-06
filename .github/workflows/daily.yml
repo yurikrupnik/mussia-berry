@@ -70,7 +70,7 @@ jobs:
 #          run_install: true
 #      - run: git config --global user.email krupnik.yuri@gmail.com && git config --global user.name yurikrupnik
 #      - run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-      - run: npm i -g dotenv
+#      - run: npm i -g dotenv
       - run: yarn nx-cloud start-ci-run
       - run: yarn test -- --skip-nx-cache --verbose
       - run: yarn build -- --skip-nx-cache --verbose
@@ -92,15 +92,18 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - name: Get Yarn cache directory
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
       - name: Use Yarn cache
         uses: actions/cache@v2
         id: yarn-cache
         with:
-          path: ".yarn/cache"
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn -v
       - run: yarn install
-      - run: npm i -g dotenv
+#      - run: npm i -g dotenv
 #       yarn cache
 #      - name: Use Yarn cache
 #        uses: actions/cache@v2
