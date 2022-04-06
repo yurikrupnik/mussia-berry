@@ -33,8 +33,8 @@ jobs:
 #      with:
 #        path: ".yarn/cache"
 #        key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
-    - run: yarn install
     - run: yarn -v
-    - run: yarn dlx nx run-many --parallel --all --target=test
-    - run: yarn dlx nx run-many --parallel --all --target=build
-    - run: yarn dlx nx run-many --parallel --all --target=lint
+    - run: yarn
+    - run: yarn nx run-many --parallel --all --target=build
+#    - run: yarn dlx nx run-many --parallel --all --target=test
+#    - run: yarn dlx nx run-many --parallel --all --target=lint
