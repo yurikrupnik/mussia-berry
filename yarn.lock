@@ -5644,6 +5644,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.0.0":
+  version: 16.0.0
+  resolution: "dotenv@npm:16.0.0"
+  checksum: 664cebb51f0a9a1d1b930f51f0271e72e26d62feaecc9dc03df39453dd494b4e724809ca480fb3ec3213382b1ed3f791aaeb83569a137f9329ce58efd4853dbf
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:~10.0.0":
   version: 10.0.0
   resolution: "dotenv@npm:10.0.0"
@@ -9371,6 +9378,7 @@ __metadata:
     babel-jest: 27.2.3
     core-js: ^3.6.5
     cypress: ^9.1.0
+    dotenv: ^16.0.0
     eslint: ~8.7.0
     eslint-config-prettier: 8.1.0
     eslint-plugin-cypress: ^2.10.3
