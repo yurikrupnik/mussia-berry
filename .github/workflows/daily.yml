@@ -77,7 +77,7 @@ jobs:
       - run: yarn lint -- --skip-nx-cache --verbose
 #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
-        run: npx nx-cloud stop-all-agents
+        run: yarn dls nx-cloud stop-all-agents
         if: ${{ always() }}
 
   agents:
@@ -120,4 +120,4 @@ jobs:
       #      - run: |-
       #          gcloud --quiet auth configure-docker
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: npx nx-cloud start-agent
+        run: yarn dls nx-cloud start-agent
